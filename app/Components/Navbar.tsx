@@ -12,7 +12,7 @@ export default function Navbar() {
     
         <nav className="px-10 flex items-center gap-10">
             <div className='flex  flex-col items-center'>
-                <Image src={'/logo.png'} height={25} width={40} alt='logo'/>
+                <Image src={'/logo.png'} height={35} width={47} alt='logo'/>
                 <h4 className='text-[9px] font-bold text-gray-600'>Artful Studio</h4>
             </div>
             <ul className='hidden lg:flex gap-4 items-center text-sm font-extralight cursor-pointer'>
