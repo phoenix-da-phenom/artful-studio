@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { SlArrowDown } from "react-icons/sl";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Image from 'next/image';
 export default function Navbar() {
     const [showExpansion, setShowExpansion]= useState<boolean>(false);
     console.log(showExpansion)
@@ -11,7 +12,7 @@ export default function Navbar() {
     
         <nav className="px-10 flex items-center gap-10">
             <div>
-                <h4>LOGO</h4>
+                <Image src={'/logo.png'} height={30} width={45} alt='logo'/>
             </div>
             <ul className='hidden lg:flex gap-4 items-center text-sm font-extralight cursor-pointer'>
                 <li>Gallery</li>
