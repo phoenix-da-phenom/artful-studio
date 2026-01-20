@@ -11,8 +11,9 @@ export default function Navbar() {
     <div className="border-b border-gray-300 py-1">
     
         <nav className="px-10 flex items-center gap-10">
-            <div>
-                <Image src={'/logo.png'} height={30} width={45} alt='logo'/>
+            <div className='flex  flex-col items-center'>
+                <Image src={'/logo.png'} height={25} width={40} alt='logo'/>
+                <h4 className='text-[9px] font-bold text-gray-600'>Artful Studio</h4>
             </div>
             <ul className='hidden lg:flex gap-4 items-center text-sm font-extralight cursor-pointer'>
                 <li>Gallery</li>
