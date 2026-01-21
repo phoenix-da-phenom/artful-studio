@@ -16,7 +16,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex flex-col items-center">
           <Image
-            src="/logo.png"
+            src="/logo1.png"
             alt="logo"
             width={47}
             height={35}
