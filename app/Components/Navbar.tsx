@@ -76,7 +76,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
  <div
-  className={`lg:hidden fixed inset-x-0 top-[56px] z-50 transition-all duration-300 ${
+  className={`lg:hidden fixed inset-x-0 top-[56px] z-50 transition-all duration-600 ${
     isMobileOpen
       ? "max-h-[80vh] opacity-100"
       : "max-h-0 opacity-0 pointer-events-none"
