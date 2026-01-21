@@ -45,7 +45,7 @@ export default function Navbar() {
 
         {/* Desktop more dropdown */}
         {showExpansion && (
-          <div className="hidden lg:block absolute top-full left-[180px] mt-2 bg-white shadow-md rounded-md px-4 py-2">
+          <div className="hidden lg:block absolute top-full left-[320px] mt-2 bg-white shadow-md rounded-md px-4 py-2">
             <ul className="flex flex-col gap-2 text-sm">
               <li>Item 1</li>
               <li>Item 2</li>
