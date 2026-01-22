@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useState, useRef } from "react";
 
 const images = [
-  { src: "/img12.jfif", w: 420, h: 520, style: "top-0 left-0 rotate-[-3deg]" },
+  { src: "/img4.PNG", w: 420, h: 520, style: "top-0 left-0 rotate-[-3deg]" },
   { src: "/img18.jpg", w: 500, h: 420, style: "top-16 left-40 rotate-[2deg]" },
   { src: "/img13.jpg", w: 380, h: 480, style: "top-4 left-[60%] rotate-[4deg]" },
 
