@@ -4,13 +4,13 @@ import Image from "next/image";
 import React, { useState, useRef } from "react";
 
 const images = [
-  { src: "/img1.PNG", w: 420, h: 520, style: "top-0 left-0 rotate-[-3deg]" },
-  { src: "/img2.PNG", w: 500, h: 420, style: "top-16 left-40 rotate-[2deg]" },
-  { src: "/img3.PNG", w: 380, h: 480, style: "top-4 left-[60%] rotate-[4deg]" },
+  { src: "/img12.jfif", w: 420, h: 520, style: "top-0 left-0 rotate-[-3deg]" },
+  { src: "/img18.jpg", w: 500, h: 420, style: "top-16 left-40 rotate-[2deg]" },
+  { src: "/img13.jpg", w: 380, h: 480, style: "top-4 left-[60%] rotate-[4deg]" },
 
-  { src: "/img4.PNG", w: 460, h: 340, style: "top-[60%] left-10 rotate-[1deg]" },
-  { src: "/img5.PNG", w: 420, h: 460, style: "top-[55%] left-[40%] rotate-[-4deg]" },
-  { src: "/img6.PNG", w: 500, h: 360, style: "top-[65%] left-[65%] rotate-[3deg]" },
+  { src: "/img15.jpg", w: 460, h: 340, style: "top-[60%] left-10 rotate-[1deg]" },
+  { src: "/img17.jpg", w: 420, h: 460, style: "top-[55%] left-[40%] rotate-[-4deg]" },
+  { src: "/img14.jpg", w: 500, h: 360, style: "top-[65%] left-[65%] rotate-[3deg]" },
 ];
 
 export default function LandingDisplayImages() {
