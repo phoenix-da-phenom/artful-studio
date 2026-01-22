@@ -1,18 +1,17 @@
-"use client"
-import React, { useState } from "react"
-import { SlArrowDown } from "react-icons/sl"
-import { GiHamburgerMenu } from "react-icons/gi"
-import Image from "next/image"
+"use client";
+import React, { useState } from "react";
+import { SlArrowDown } from "react-icons/sl";
+import { GiHamburgerMenu } from "react-icons/gi";
+import Image from "next/image";
 
 export default function Navbar() {
-  const [showExpansion, setShowExpansion] = useState(false) // desktop "More"
-  const [isMobileOpen, setIsMobileOpen] = useState(false)
-  const [isMobileMoreOpen, setIsMobileMoreOpen] = useState(false)
+  const [showExpansion, setShowExpansion] = useState(false); // desktop "More"
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isMobileMoreOpen, setIsMobileMoreOpen] = useState(false);
 
   return (
     <div className="border-b border-gray-300 py-1">
       <nav className="px-5 lg:px-10 flex items-center gap-6 relative">
-
         {/* Logo */}
         <div className="flex flex-col items-center">
           <Image
@@ -32,7 +31,7 @@ export default function Navbar() {
           <li>Community</li>
           <li
             className="flex items-center gap-1"
-            onClick={() => setShowExpansion(prev => !prev)}
+            onClick={() => setShowExpansion((prev) => !prev)}
           >
             More
             <SlArrowDown
@@ -58,7 +57,7 @@ export default function Navbar() {
         <div className="ml-auto flex items-center gap-4">
           {/* Hamburger */}
           <button
-            onClick={() => setIsMobileOpen(prev => !prev)}
+            onClick={() => setIsMobileOpen((prev) => !prev)}
             className="lg:hidden text-xl"
           >
             <GiHamburgerMenu />
@@ -66,7 +65,7 @@ export default function Navbar() {
 
           {/* Desktop buttons */}
           <div className="hidden lg:flex gap-4">
-            <button className="bg-primary px-3 py-1 rounded-sm text-white hover:bg-primary/90">
+            <button className="bg-primary px-3 py-1 rounded-sm border border-gray-400 text-white hover:bg-primary/90">
               Sign in
             </button>
             <button>Join</button>
@@ -75,20 +74,22 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile menu */}
- <div
-  className={`lg:hidden fixed inset-x-0 top-[56px] z-50 transition-all duration-600 ${
-    isMobileOpen
-      ? "max-h-[80vh] opacity-100"
-      : "max-h-0 opacity-0 pointer-events-none"
-  }`}
->
-      <ul className="
+      <div
+        className={`lg:hidden fixed inset-x-0 top-[56px] z-50 transition-all duration-600 ${
+          isMobileOpen
+            ? "max-h-[80vh] opacity-100"
+            : "max-h-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        <ul
+          className="
   flex flex-col gap-4 px-5 py-4 text-sm font-light
   bg-white/70
   backdrop-blur-md
   border border-white/30
   shadow-lg
-">
+"
+        >
           <li>Gallery</li>
           <li>Images</li>
           <li>Community</li>
@@ -96,7 +97,7 @@ export default function Navbar() {
           {/* Mobile More */}
           <li
             className="flex items-center gap-1"
-            onClick={() => setIsMobileMoreOpen(prev => !prev)}
+            onClick={() => setIsMobileMoreOpen((prev) => !prev)}
           >
             More
             <SlArrowDown
@@ -123,5 +124,5 @@ export default function Navbar() {
         </ul>
       </div>
     </div>
-  )
+  );
 }
