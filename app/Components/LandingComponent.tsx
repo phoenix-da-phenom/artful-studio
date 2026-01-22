@@ -18,7 +18,7 @@ export default function LandingComponent() {
           <button className="bg-transparent p-4 border border-gray-400 rounded-sm font-semibold cursor-pointer text-foreground ">Login</button>
       </div>
 
-      <div className="mt-10">
+      <div className="my-10">
         <LandingDisplayImages/>
       </div>
     </div>
