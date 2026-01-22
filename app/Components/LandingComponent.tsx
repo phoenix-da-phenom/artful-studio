@@ -13,12 +13,16 @@ export default function LandingComponent() {
         </span>
       </TextHeader>
 
-      <div className="flex  gap-2 justify-center">
-        <button className="bg-secondary p-4 rounded-sm border border-gray-400  text-white font-semibold cursor-pointer">Explore</button>
-          <button className="bg-transparent p-4 border border-gray-400 rounded-sm font-semibold cursor-pointer text-foreground ">Login</button>
-      </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+          <button className="bg-secondary text-black px-8 py-3 font-semibold rounded-sm hover:bg-gray-200 transition">
+            Browse
+          </button>
 
-      <div className="my-10">
+          <button className="border border-white px-8 py-3 font-semibold rounded-sm hover:bg-white/10 transition">
+            Pricing
+          </button>
+        </div>
+      <div className="mt-10">
         <LandingDisplayImages/>
       </div>
     </div>
