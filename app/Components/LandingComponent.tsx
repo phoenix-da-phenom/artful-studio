@@ -13,7 +13,7 @@ export default function LandingComponent() {
         </span>
       </TextHeader>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 w-50  mx-auto">
           <button className="bg-secondary text-black px-8 py-3 font-semibold rounded-sm hover:bg-gray-200 transition">
             Browse
           </button>
