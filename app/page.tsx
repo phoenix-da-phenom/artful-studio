@@ -6,12 +6,10 @@ import HowitWork from "./Components/HowitWork";
 
 export default function Home() {
   return (
-    <div className="py-2 bg-background/30 min-h-screen">
-      <Navbar/>
-      <LandingComponent/>
-      <HeaderSection/>
-      <HowitWork/>
-   
+    <div>
+      <LandingComponent />
+      <HeaderSection />
+      <HowitWork />
     </div>
   );
 }
