@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function page() {
+export default async function page() {
+  await new Promise ((resolve)=>{
+    setTimeout(()=>{
+      resolve("intentional delay")
+    }, 1200)
+  })
   return (
     <div>
       <div>

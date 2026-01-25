@@ -4,7 +4,10 @@ import LandingComponent from "./Components/LandingComponent";
 import HeaderSection from "./Components/HeaderSection";
 import HowitWork from "./Components/HowitWork";
 
-export default function Home() {
+export default async function Home() {
+  await new Promise((resolve)=>{
+    setTimeout(()=>{resolve("intentional delay")}, 1200)
+  })
   return (
     <div>
       <LandingComponent />
