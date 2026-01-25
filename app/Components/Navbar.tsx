@@ -10,6 +10,10 @@ export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isMobileMoreOpen, setIsMobileMoreOpen] = useState(false);
   const router = useRouter();
+  const closeMobileMenu = () => {
+  setIsMobileOpen(false);
+  setIsMobileMoreOpen(false);
+};
 
   return (
     <div className="border-b border-gray-300 py-1">
@@ -72,7 +76,7 @@ export default function Navbar() {
             <button
             onClick={()=>{router.push('/login')}}
              className="bg-primary px-3 py-1 rounded-sm border border-gray-400 text-white hover:bg-primary/90">
-              login in
+              login 
             </button>
             <button
                onClick={()=>{router.push('/register')}}
@@ -98,9 +102,9 @@ export default function Navbar() {
   shadow-lg
 "
         >
-          <li>Gallery</li>
-          <li>Images</li>
-          <li>Community</li>
+          <li onClick={closeMobileMenu}>Gallery</li>
+          <li onClick={closeMobileMenu}>Images</li>
+          <li onClick={closeMobileMenu}>Community</li>
 
           {/* Mobile More */}
           <li
@@ -117,21 +121,21 @@ export default function Navbar() {
 
           {isMobileMoreOpen && (
             <ul className="ml-4 flex flex-col gap-2 text-gray-600">
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
+              <li onClick={closeMobileMenu}>Item 1</li>
+              <li onClick={closeMobileMenu}>Item 2</li>
+              <li onClick={closeMobileMenu}>Item 3</li>
             </ul>
           )}
 
           <hr />
 
           <button
-             onClick={()=>{router.push('/login')}}
+             onClick={()=>{ closeMobileMenu();router.push('/login')}}
            className="bg-primary px-3 py-2 rounded-sm text-white">
-            Sign in
+          login
           </button>
           <button
-             onClick={()=>{router.push('/register')}}
+             onClick={()=>{ closeMobileMenu();router.push('/register')}}
           >Join</button>
         </ul>
       </div>
