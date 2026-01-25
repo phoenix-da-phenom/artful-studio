@@ -3,17 +3,21 @@ import React, { useState } from "react";
 import { SlArrowDown } from "react-icons/sl";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [showExpansion, setShowExpansion] = useState(false); // desktop "More"
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isMobileMoreOpen, setIsMobileMoreOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <div className="border-b border-gray-300 py-1">
       <nav className="px-5 lg:px-10 flex items-center gap-6 relative">
         {/* Logo */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center"
+           onClick={()=>{router.push('/')}}
+        >
           <Image
             src="/logo1.png"
             alt="logo"
@@ -65,10 +69,14 @@ export default function Navbar() {
 
           {/* Desktop buttons */}
           <div className="hidden lg:flex gap-4">
-            <button className="bg-primary px-3 py-1 rounded-sm border border-gray-400 text-white hover:bg-primary/90">
-              Sign in
+            <button
+            onClick={()=>{router.push('/login')}}
+             className="bg-primary px-3 py-1 rounded-sm border border-gray-400 text-white hover:bg-primary/90">
+              login in
             </button>
-            <button>Join</button>
+            <button
+               onClick={()=>{router.push('/register')}}
+            >Join</button>
           </div>
         </div>
       </nav>
@@ -117,10 +125,14 @@ export default function Navbar() {
 
           <hr />
 
-          <button className="bg-primary px-3 py-2 rounded-sm text-white">
+          <button
+             onClick={()=>{router.push('/login')}}
+           className="bg-primary px-3 py-2 rounded-sm text-white">
             Sign in
           </button>
-          <button>Join</button>
+          <button
+             onClick={()=>{router.push('/register')}}
+          >Join</button>
         </ul>
       </div>
     </div>
