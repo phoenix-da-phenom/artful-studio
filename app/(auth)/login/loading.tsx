@@ -10,7 +10,7 @@ export default function Loading() {
       <div className="flex flex-col items-center gap-6 animate-fadeIn">
         <Image src="/logo1.png" alt="logo" width={60} height={45} />
         <p className="text-xs tracking-widest text-gray-500 animate-pulse">
-          LOADING
+          LOADING...
         </p>
       </div>
     </div>
