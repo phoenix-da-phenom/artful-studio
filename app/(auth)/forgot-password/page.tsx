@@ -1,11 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function ForgotPasswordPage() {
+  const router = useRouter(); // ✅ hook at top level
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+
+  const handleLoginRedirect = () => {
+    router.push("/login"); // ✅ fixed path
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,16 +29,7 @@ export default function ForgotPasswordPage() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="
-          w-full
-          sm:max-w-xl
-          lg:max-w-2xl
-          bg-white/10 backdrop-blur-xl
-          border border-white/20
-          rounded-2xl
-          p-6 sm:p-10
-          shadow-2xl
-        "
+        className="w-full sm:max-w-xl lg:max-w-2xl bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 sm:p-10 shadow-2xl"
       >
         {/* Header */}
         <motion.div
@@ -52,7 +49,6 @@ export default function ForgotPasswordPage() {
         {/* Content */}
         {!sent ? (
           <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-            {/* Email */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -63,66 +59,24 @@ export default function ForgotPasswordPage() {
                 type="email"
                 required
                 placeholder=" "
-                className="
-                  peer
-                  w-full
-                  px-4 pt-5 pb-2
-                  rounded-xl
-                  bg-white/10
-                  text-white
-                  border border-white/20
-                  outline-none
-                  focus:border-indigo-400
-                  focus:ring-2 focus:ring-indigo-400/40
-                  transition
-                "
+                className="peer w-full px-4 pt-5 pb-2 rounded-xl bg-white/10 text-white border border-white/20 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 transition"
               />
 
-              <label
-                className="
-                  absolute
-                  left-4
-                  top-4
-                  text-gray-400
-                  pointer-events-none
-                  transition-all
-                  peer-placeholder-shown:top-4
-                  peer-placeholder-shown:text-base
-                  peer-focus:top-1
-                  peer-focus:text-xs
-                  peer-focus:text-indigo-400
-                  peer-not-placeholder-shown:top-1
-                  peer-not-placeholder-shown:text-xs
-                  peer-not-placeholder-shown:text-indigo-400
-                "
-              >
+              <label className="absolute left-4 top-4 text-gray-400 pointer-events-none transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-xs peer-focus:text-indigo-400 peer-not-placeholder-shown:top-1 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-indigo-400">
                 Email address
               </label>
             </motion.div>
 
-            {/* Button */}
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.95 }}
               disabled={loading}
-              className="
-                w-full
-                py-3 sm:py-4
-                rounded-xl
-                bg-indigo-500
-                text-white
-                font-semibold
-                shadow-lg
-                hover:bg-indigo-600
-                transition
-                disabled:opacity-70
-              "
+              className="w-full py-3 sm:py-4 rounded-xl bg-indigo-500 text-white font-semibold shadow-lg hover:bg-indigo-600 transition disabled:opacity-70"
             >
               {loading ? "Sending link..." : "Send reset link"}
             </motion.button>
           </form>
         ) : (
-          /* Success State */
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -149,7 +103,10 @@ export default function ForgotPasswordPage() {
           className="text-gray-400 text-center text-sm mt-8"
         >
           Remember your password?{" "}
-          <span className="text-indigo-400 cursor-pointer hover:underline">
+          <span
+            className="text-indigo-400 cursor-pointer hover:underline"
+            onClick={handleLoginRedirect}
+          >
             Back to login
           </span>
         </motion.p>

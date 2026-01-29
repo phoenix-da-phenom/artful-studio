@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-
+import { useRouter } from "next/navigation";
 export default function ForgotPasswordPage() {
+   const router = useRouter(); // ✅ hook at top level
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
@@ -16,7 +17,9 @@ export default function ForgotPasswordPage() {
       setSent(true);
     }, 2000);
   };
-
+  const handleLoginRedirect = () => {
+    router.push("/register"); // ✅ fixed path
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-gray-800 px-4">
       <motion.div
@@ -195,9 +198,9 @@ export default function ForgotPasswordPage() {
           transition={{ delay: 0.6 }}
           className="text-gray-400 text-center text-sm mt-8"
         >
-          Remember your password?{" "}
-          <span className="text-indigo-400 cursor-pointer hover:underline">
-            Back to login
+          You don't have an account?{" "}
+          <span className="text-indigo-400 cursor-pointer hover:underline"   onClick={handleLoginRedirect}>
+           Register here
           </span>
         </motion.p>
       </motion.div>
