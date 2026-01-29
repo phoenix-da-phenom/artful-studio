@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 export default function ForgotPasswordPage() {
-   const router = useRouter(); // ✅ hook at top level
+  const router = useRouter(); // ✅ hook at top level
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
@@ -45,7 +45,7 @@ export default function ForgotPasswordPage() {
           className="text-center"
         >
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-           Login
+            Login
           </h1>
           <p className="text-gray-300 mt-2 text-sm sm:text-base">
             No worries —Connection is secured.
@@ -103,8 +103,7 @@ export default function ForgotPasswordPage() {
               </label>
             </motion.div>
 
-
-  <motion.div
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
@@ -168,7 +167,7 @@ export default function ForgotPasswordPage() {
                 disabled:opacity-70
               "
             >
-              {loading ? "Sending link..." : "Send reset link"}
+              {loading ? "Sending data..." : "login"}
             </motion.button>
           </form>
         ) : (
@@ -191,6 +190,40 @@ export default function ForgotPasswordPage() {
           </motion.div>
         )}
 
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4 }}
+          className="mt-10 text-center"
+        >
+          
+         <div className="flex gap-3 justify-center">
+            <div>
+              <input  maxLength={1} className="text-center  font-bold text-white w-10 rounded-md border border-gray-400" type="text"/>
+
+            </div>
+             <div>
+              <input  maxLength={1} className="text-center  font-bold text-white w-10 rounded-md border border-gray-400" type="text"/>
+
+            </div>
+             <div>
+              <input  maxLength={1} className="text-center  font-bold text-white w-10 rounded-md border border-gray-400" type="text"/>
+
+            </div>
+             <div>
+              <input  maxLength={1} className="text-center  font-bold text-white w-10 rounded-md border border-gray-400" type="text"/>
+
+            </div>
+             <div>
+              <input  maxLength={1} className="text-center  font-bold text-white w-10 rounded-md border border-gray-400" type="text"/>
+
+            </div>
+             <div>
+              <input  maxLength={1} className="text-center  font-bold text-white w-10 rounded-md border border-gray-400" type="text"/>
+
+            </div>
+         </div>
+        </motion.div>
         {/* Footer */}
         <motion.p
           initial={{ opacity: 0 }}
@@ -199,8 +232,11 @@ export default function ForgotPasswordPage() {
           className="text-gray-400 text-center text-sm mt-8"
         >
           You don't have an account?{" "}
-          <span className="text-indigo-400 cursor-pointer hover:underline"   onClick={handleLoginRedirect}>
-           Register here
+          <span
+            className="text-indigo-400 cursor-pointer hover:underline"
+            onClick={handleLoginRedirect}
+          >
+            Register here
           </span>
         </motion.p>
       </motion.div>
