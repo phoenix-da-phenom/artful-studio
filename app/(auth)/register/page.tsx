@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+  const router = useRouter(); // ✅ hook at top level
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [pageReady, setPageReady] = useState(false);
@@ -16,6 +18,10 @@ export default function Page() {
 
     return () => clearTimeout(timer);
   }, []);
+  
+  const handleLoginRedirect = () => {
+    router.push("/login"); // ✅ fixed path
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -96,7 +102,7 @@ export default function Page() {
 
         <p className="text-gray-400 text-center text-sm mt-8">
           Remember your password?{" "}
-          <span className="text-indigo-400 cursor-pointer hover:underline">
+          <span className="text-indigo-400 cursor-pointer hover:underline"   onClick={handleLoginRedirect}>
             Back to login
           </span>
         </p>
