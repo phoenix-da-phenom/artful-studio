@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-export default function ForgotPasswordPage() {
+export default async function ForgotPasswordPage() {
+  
   const router = useRouter(); // ✅ hook at top level
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
@@ -187,6 +188,50 @@ export default function ForgotPasswordPage() {
             <p className="text-gray-300 mt-2 text-sm sm:text-base">
               We’ve sent a password reset link to your inbox.
             </p>
+              <div className="flex gap-3 justify-center">
+            <div>
+              <input
+                maxLength={1}
+                className="text-center  font-bold text-white w-10 rounded-md border border-gray-400"
+                type="text"
+              />
+            </div>
+            <div>
+              <input
+                maxLength={1}
+                className="text-center  font-bold text-white w-10 rounded-md border border-gray-400"
+                type="text"
+              />
+            </div>
+            <div>
+              <input
+                maxLength={1}
+                className="text-center  font-bold text-white w-10 rounded-md border border-gray-400"
+                type="text"
+              />
+            </div>
+            <div>
+              <input
+                maxLength={1}
+                className="text-center  font-bold text-white w-10 rounded-md border border-gray-400"
+                type="text"
+              />
+            </div>
+            <div>
+              <input
+                maxLength={1}
+                className="text-center  font-bold text-white w-10 rounded-md border border-gray-400"
+                type="text"
+              />
+            </div>
+            <div>
+              <input
+                maxLength={1}
+                className="text-center  font-bold text-white w-10 rounded-md border border-gray-400"
+                type="text"
+              />
+            </div>
+          </div>
           </motion.div>
         )}
 
@@ -196,33 +241,7 @@ export default function ForgotPasswordPage() {
           transition={{ duration: 0.4 }}
           className="mt-10 text-center"
         >
-          
-         <div className="flex gap-3 justify-center">
-            <div>
-              <input  maxLength={1} className="text-center  font-bold text-white w-10 rounded-md border border-gray-400" type="text"/>
-
-            </div>
-             <div>
-              <input  maxLength={1} className="text-center  font-bold text-white w-10 rounded-md border border-gray-400" type="text"/>
-
-            </div>
-             <div>
-              <input  maxLength={1} className="text-center  font-bold text-white w-10 rounded-md border border-gray-400" type="text"/>
-
-            </div>
-             <div>
-              <input  maxLength={1} className="text-center  font-bold text-white w-10 rounded-md border border-gray-400" type="text"/>
-
-            </div>
-             <div>
-              <input  maxLength={1} className="text-center  font-bold text-white w-10 rounded-md border border-gray-400" type="text"/>
-
-            </div>
-             <div>
-              <input  maxLength={1} className="text-center  font-bold text-white w-10 rounded-md border border-gray-400" type="text"/>
-
-            </div>
-         </div>
+        
         </motion.div>
         {/* Footer */}
         <motion.p
