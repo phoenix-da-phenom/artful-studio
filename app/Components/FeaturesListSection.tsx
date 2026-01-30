@@ -1,6 +1,14 @@
 import Image from "next/image";
 
-export default function Page() {
+interface FeaturesListSectionProps {
+  caption: string;
+  description: string;
+}
+
+export default function FeaturesListSection({
+  caption,
+  description,
+}: FeaturesListSectionProps) {
   return (
     <main className="min-h-screen bg-primary/20 flex items-center">
       <div className="w-full max-w-7xl mx-auto px-6 md:px-16 py-12">
@@ -32,15 +40,13 @@ export default function Page() {
               </p>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.15]">
-                View photography
+                {caption}
                 <br className="hidden sm:block" />
                 that speaks
               </h1>
 
               <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-700">
-                Browse galleries organized by artists and themes. Each
-                collection reveals something new about the craft and the vision
-                behind it.
+                {description}
               </p>
 
             </div>
