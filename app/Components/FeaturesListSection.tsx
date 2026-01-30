@@ -1,18 +1,15 @@
 import Image from "next/image";
-import React from "react";
 
-export default function FeaturesListSection() {
+export default function Page() {
   return (
-    <section className="min-h-screen bg-primary/20 flex items-center">
+    <main className="min-h-screen bg-primary/20 flex items-center">
       <div className="w-full max-w-7xl mx-auto px-6 md:px-16 py-12">
         
-        {/* SECTION TITLE */}
         <h4 className="font-semibold mb-16">
           <span className="underline mr-2">01</span>
           <span className="underline">Curated galleries</span>
         </h4>
 
-        {/* MAIN CONTENT */}
         <div className="flex flex-col-reverse md:flex-row items-center gap-14">
           
           {/* IMAGE */}
@@ -35,7 +32,8 @@ export default function FeaturesListSection() {
               </p>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.15]">
-                View photography <br className="hidden sm:block" />
+                View photography
+                <br className="hidden sm:block" />
                 that speaks
               </h1>
 
@@ -44,11 +42,12 @@ export default function FeaturesListSection() {
                 collection reveals something new about the craft and the vision
                 behind it.
               </p>
+
             </div>
           </div>
 
         </div>
       </div>
-    </section>
+    </main>
   );
 }
