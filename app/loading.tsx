@@ -1,11 +1,13 @@
 "use client";
-import React from "react";
-import Image from "next/image";
 
-export default function Loading() {
+import Image from "next/image";
+import React from "react";
+
+export default function Page() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
       <div className="flex flex-col items-center gap-6">
+        
         {/* Logo */}
         <div className="animate-logoFade">
           <Image
@@ -17,11 +19,11 @@ export default function Loading() {
           />
         </div>
 
-     
         {/* Text */}
         <p className="text-xs tracking-widest text-gray-500 animate-pulse">
           LOADING
         </p>
+
       </div>
     </div>
   );
