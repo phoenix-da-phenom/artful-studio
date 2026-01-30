@@ -10,6 +10,8 @@ export default async function ForgotPasswordPage() {
   const [sent, setSent] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        const [email, setEmail] =useState() 
+       
     e.preventDefault();
     setLoading(true);
 
@@ -17,7 +19,11 @@ export default async function ForgotPasswordPage() {
       setLoading(false);
       setSent(true);
     }, 2000);
+
+
   };
+
+
   const handleLoginRedirect = () => {
     router.push("/register"); // ✅ fixed path
   };
