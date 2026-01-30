@@ -4,6 +4,8 @@ import LandingComponent from "./Components/LandingComponent";
 import HeaderSection from "./Components/HeaderSection";
 import HowitWork from "./Components/HowitWork";
 
+import FeaturesListSection from "./Components/FeaturesListSection";
+
 export default async function Home() {
   await new Promise((resolve)=>{
     setTimeout(()=>{resolve("intentional delay")}, 1200)
@@ -13,6 +15,7 @@ export default async function Home() {
       <LandingComponent />
       <HeaderSection />
       <HowitWork />
+    <FeaturesListSection/>
     </div>
   );
 }
