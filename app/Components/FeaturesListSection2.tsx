@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ExplodeNextBtn from "./ExplodeNextBtn";
 
 interface FeaturesListSectionProps {
   caption: string;
@@ -26,7 +27,7 @@ export default function FeaturesListSection({
           {/* IMAGE */}
           <div className="relative w-full md:w-1/2 h-[280px] sm:h-[350px] md:h-[520px]">
             <Image
-              src="/img14.jpg"
+              src="/img4.PNG"
               alt="Curated gallery preview"
               fill
               className="object-cover rounded-2xl"
@@ -35,7 +36,7 @@ export default function FeaturesListSection({
           </div>
 
           {/* TEXT */}
-          <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+          <div className="w-full md:w-1/2 flex flex-col justify-center md:justify-start">
             <div className="w-full max-w-xl text-center md:text-left">
               
               <p className="text-sm font-semibold tracking-wide mb-4">
@@ -52,9 +53,12 @@ export default function FeaturesListSection({
               </p>
 
             </div>
+               <ExplodeNextBtn/>
           </div>
+       
 
         </div>
+        
       </div>
     </main>
   );

@@ -26,11 +26,17 @@ export default async function Home() {
         collection reveals something new about the craft and the vision
         behind it."
       />
-<FeaturesListSection2
+      <FeaturesListSection2
         caption="Send images to your circle"
         description="Share photographs with friends directly from the studio. Let them see what you see. BUild conversations around the work that moves you."
       />
-     
+
+       <FeaturesListSection
+        caption="View photography that speaks"
+        description="Browse galleries organized by artists and themes. Each
+        collection reveals something new about the craft and the vision
+        behind it."
+      />
     </div>
   );
 }

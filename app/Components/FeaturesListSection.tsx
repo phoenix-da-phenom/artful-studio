@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ExplodeNextBtn from "./ExplodeNextBtn";
 
 interface FeaturesListSectionProps {
   caption: string;
@@ -12,7 +13,7 @@ export default function FeaturesListSection({
   topic
 }: FeaturesListSectionProps) {
   return (
-    <main className="min-h-screen bg-primary/20 flex items-center">
+    <main className="h-full bg-primary/20 flex items-center">
       <div className="w-full max-w-7xl mx-auto px-6 md:px-16 py-12">
         
         <h4 className="font-semibold mb-16">
@@ -25,7 +26,7 @@ export default function FeaturesListSection({
           {/* IMAGE */}
           <div className="relative w-full md:w-1/2 h-[280px] sm:h-[350px] md:h-[520px]">
             <Image
-              src="/img14.jpg"
+              src="/img16.jpg"
               alt="Curated gallery preview"
               fill
               className="object-cover rounded-2xl"
@@ -34,7 +35,7 @@ export default function FeaturesListSection({
           </div>
 
           {/* TEXT */}
-          <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+          <div className="w-full md:w-1/2 flex flex-col justify-center md:justify-start">
             <div className="w-full max-w-xl text-center md:text-left">
               
               <p className="text-sm font-semibold tracking-wide mb-4">
@@ -51,9 +52,11 @@ export default function FeaturesListSection({
               </p>
 
             </div>
+              <ExplodeNextBtn/>
           </div>
 
         </div>
+      
       </div>
     </main>
   );
