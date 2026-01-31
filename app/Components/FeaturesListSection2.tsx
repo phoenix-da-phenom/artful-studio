@@ -16,11 +16,12 @@ export default function FeaturesListSection({
       <div className="w-full max-w-7xl mx-auto px-6 md:px-16 py-12">
         
         <h4 className="font-semibold mb-16">
-          <span className="underline mr-2">01</span>
+          <span className="underline mr-2">02</span>
           <span className="underline">{topic}</span>
         </h4>
 
-        <div className="flex flex-col-reverse md:flex-row items-center gap-14">
+        <div className="flex flex-col-reverse md:flex-row-reverse items-center gap-14">
+
           
           {/* IMAGE */}
           <div className="relative w-full md:w-1/2 h-[280px] sm:h-[350px] md:h-[520px]">
