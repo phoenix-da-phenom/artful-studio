@@ -6,6 +6,7 @@ import HowitWork from "./Components/HowitWork";
 
 import FeaturesListSection from "./Components/FeaturesListSection";
 import FeaturesListSection2 from "./Components/FeaturesListSection2";
+import ReadyToBeginSection from "./Components/ReadyToBeginSection";
 
 export default async function Home() {
   await new Promise((resolve) => {
@@ -37,6 +38,7 @@ export default async function Home() {
         collection reveals something new about the craft and the vision
         behind it."
       />
+      <ReadyToBeginSection/>
     </div>
   );
 }
