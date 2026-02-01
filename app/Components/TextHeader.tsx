@@ -1,4 +1,4 @@
-import { TextHeaderProps } from '@/util/projectData'
+import { TextHeaderProps } from '@/lib/projectData'
 import React from 'react'
 
 export default function TextHeader({ style, className, children}:TextHeaderProps) {
