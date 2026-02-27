@@ -1,45 +1,55 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { API } from "@/util/apiDir";
 
 export default function Page() {
-  const router = useRouter(); // ✅ hook at top level
+  const router = useRouter();
+
+  const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
-  const [pageReady, setPageReady] = useState(false);
 
-  // Intentional delay (safe for client components)
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setPageReady(true);
-    }, 1200);
-
-    return () => clearTimeout(timer);
-  }, []);
-  
   const handleLoginRedirect = () => {
-    router.push("/login"); // ✅ fixed path
+    router.push("/login");
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
+
+    if (!email) return;
+
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
-      setSent(true);
-    }, 2000);
-  };
+    try {
+      const res = await fetch(`${API.BASE_URL}/api/v1/auth/request-magic-link`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+         
+        }),
+      });
 
-  if (!pageReady) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-black text-white">
-        Loading...
-      </div>
-    );
-  }
+      if (!res.ok) {
+        throw new Error("Failed to send reset email");
+      }
+
+      await res.json();
+
+      setSent(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-gray-800 px-4">
@@ -52,10 +62,10 @@ export default function Page() {
         {/* Header */}
         <div className="text-center">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-            Register Now
+            Sign up
           </h1>
           <p className="text-gray-300 mt-2 text-sm sm:text-base">
-            No worries — we’ll send you a reset link.
+            No worries — we will not share your email
           </p>
         </div>
 
@@ -64,11 +74,21 @@ export default function Page() {
             <div className="relative">
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 placeholder=" "
                 className="peer w-full px-4 pt-5 pb-2 rounded-xl bg-white/10 text-white border border-white/20 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 transition"
               />
-              <label className="absolute left-4 top-4 text-gray-400 pointer-events-none transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-xs peer-focus:text-indigo-400 peer-not-placeholder-shown:top-1 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-indigo-400">
+              <label className="absolute left-4 top-4 text-gray-400 pointer-events-none transition-all 
+                peer-placeholder-shown:top-4 
+                peer-placeholder-shown:text-base 
+                peer-focus:top-1 
+                peer-focus:text-xs 
+                peer-focus:text-indigo-400 
+                peer-not-placeholder-shown:top-1 
+                peer-not-placeholder-shown:text-xs 
+                peer-not-placeholder-shown:text-indigo-400">
                 Email address
               </label>
             </div>
@@ -79,7 +99,7 @@ export default function Page() {
               disabled={loading}
               className="w-full py-3 sm:py-4 rounded-xl bg-indigo-500 text-white font-semibold shadow-lg hover:bg-indigo-600 transition disabled:opacity-70"
             >
-              {loading ? "Sending link..." : "Send reset link"}
+              {loading ? "Sending link..." : "Send registration link"}
             </motion.button>
           </form>
         ) : (
@@ -102,7 +122,10 @@ export default function Page() {
 
         <p className="text-gray-400 text-center text-sm mt-8">
           Remember your password?{" "}
-          <span className="text-indigo-400 cursor-pointer hover:underline"   onClick={handleLoginRedirect}>
+          <span
+            className="text-indigo-400 cursor-pointer hover:underline"
+            onClick={handleLoginRedirect}
+          >
             Back to login
           </span>
         </p>
