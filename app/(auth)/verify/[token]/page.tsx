@@ -1,8 +1,11 @@
 import {API} from "@/util/apiDir"
 export default async function Page({
-  params,
-}:{params:{token: string}}){
-const {token}= params
+ searchParams,
+}:{searchParams:Promise<{token?: string}>}){
+const params= await searchParams
+const token = params?.token 
+
+console.log(" this is the token" +token)
 try{
   const res = await fetch(`${API.BASE_URL}/api/v1/auth/verify`,{
     method:"POST",

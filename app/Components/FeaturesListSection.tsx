@@ -2,22 +2,28 @@ import Image from "next/image";
 import ExplodeNextBtn from "./ExplodeNextBtn";
 
 interface FeaturesListSectionProps {
+  key:number,
   caption: string;
   description: string;
   topic?: string;
+  image: string,
+  count:number
 }
 
 export default function FeaturesListSection({
+
   caption,
   description,
-  topic
+  topic,
+  image,
+  count
 }: FeaturesListSectionProps) {
   return (
     <main className="h-full bg-primary/20 flex items-center">
       <div className="w-full max-w-7xl mx-auto px-6 md:px-16 py-12">
         
         <h4 className="font-semibold mb-16">
-          <span className="underline mr-2">01</span>
+          <span className="underline mr-2">{count}</span>
           <span className="underline">{topic}</span>
         </h4>
 
@@ -26,7 +32,7 @@ export default function FeaturesListSection({
           {/* IMAGE */}
           <div className="relative w-full md:w-1/2 h-[280px] sm:h-[350px] md:h-[520px]">
             <Image
-              src="/img16.jpg"
+              src={image}
               alt="Curated gallery preview"
               fill
               className="object-cover rounded-2xl"
