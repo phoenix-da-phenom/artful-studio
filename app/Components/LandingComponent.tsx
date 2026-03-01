@@ -1,8 +1,12 @@
+"use client"
 import React from "react";
 import TextHeader from "./TextHeader";
 import LandingDisplayImages from "./LandingDisplayImages";
+import { useRouter } from "next/navigation";
 
 export default function LandingComponent() {
+
+  const router = useRouter();
   return (
     <div>
       <TextHeader className="font-semibold text-4xl text-center py-5 mt-10">
@@ -14,7 +18,7 @@ export default function LandingComponent() {
       </TextHeader>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 w-50  mx-auto">
-          <button className="bg-secondary text-black px-8 py-3 font-semibold rounded-sm hover:bg-gray-200 transition">
+          <button onClick={()=>router.push("/explore")} className="bg-secondary text-black px-8 py-3 font-semibold rounded-sm hover:bg-gray-200 transition">
             Browse
           </button>
 
