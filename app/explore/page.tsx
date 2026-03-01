@@ -1,11 +1,8 @@
-import React from "react";
-import LandingComponent from "../Components/LandingComponent";
-import HeaderSection from "../Components/HeaderSection";
-import HowitWork from "../Components/HowitWork";
-import Navbar from "../Components/Navbar";
+
 import ExploreHeroSection from "../Components/ExploreHeroSection";
 import WhatMakesThisGalleryDifferent from "../Components/WhatMakesThisGalleryDifferent";
 import ImageCard from "../Components/ImageCard";
+import FeaturedWork from "../Components/FeaturedWork";
 
 const imageData = [
   {
@@ -41,6 +38,7 @@ export default function Page() {
             />
           ))}
         </div>
+     <FeaturedWork/>
       </div>
     </div>
   );
