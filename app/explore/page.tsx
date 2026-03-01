@@ -31,7 +31,7 @@ export default function Page() {
       <ExploreHeroSection />
       <WhatMakesThisGalleryDifferent />
       <div className="my-10">
-        <div style={{ display: "flex", gap: "20px", width: "80%", marginLeft:"auto", marginRight:"auto" }}>
+        <div className="flex flex-col md:flex-row gap-10 w-[90%] md:w-[80%] mx-auto">
           {imageData.map((item, index) => (
             <ImageCard
               key={index}
