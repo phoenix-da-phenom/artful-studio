@@ -13,7 +13,7 @@ export default async function Page({
   if (!token) {
     redirect("/login");
   }
-console.log("Final URL:", `${API.BASE_URL}/api/v1/auth/verify`);
+
   try {
     const res = await fetch(`${API.BASE_URL}/api/v1/auth/verify?token=${token}`, {
       method: "POST",
