@@ -12,7 +12,7 @@ const ExploreHeroSection = () => {
           
           {/* LEFT CONTENT */}
           <div className="flex-1 flex flex-col justify-center space-y-6">
-            <h4 className="text-3xl md:text-4xl font-semibold">
+            <h4 className="text-2xl lg:text-3xl md:text-4xl font-semibold">
               See what matters most clearly
             </h4>
 
