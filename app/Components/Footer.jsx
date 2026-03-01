@@ -38,6 +38,7 @@ export default function Footer() {
         </div>
 
         {/* Links Column 1 */}
+        <div></div>
         <div>
           <ul className="space-y-2 font-medium">
             <li className="hover:text-gray-600 cursor-pointer">Home</li>
