@@ -35,7 +35,7 @@ export default function Navbar() {
         {/* Desktop links */}
         <ul className="hidden lg:flex gap-4 items-center text-sm font-extralight cursor-pointer">
           <li>Gallery</li>
-          <li>Images</li>
+          <li>Artist</li>
           <li>Community</li>
           <li
             className="flex items-center gap-1"
