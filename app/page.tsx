@@ -7,26 +7,28 @@ import HowitWork from "./Components/HowitWork";
 import FeaturesListSection from "./Components/FeaturesListSection";
 import FeaturesListSection2 from "./Components/FeaturesListSection2";
 import ReadyToBeginSection from "./Components/ReadyToBeginSection";
-import Footer from "./Components/Footer"
+import Footer from "./Components/Footer";
 
-
-const data= [
-  {image :"/img16.jpg",
-    caption:"View photography",
-        description:"Browse galleries organized by artists and themes. Each collection reveals something new about the craft and the vision behind it."
-    },
-    {
-      image:"/img7.png",
-      caption: "Send images to your circle",
-      description:"Browse galleries organized by artists and themes. Each collection reveals something new about the craft and the vision behind it."
-    },
-     {
-      image:"/img6.png",
-      caption: "Send images to your circle",
-      description:"Browse galleries organized by artists and themes. Each collection reveals something new about the craft and the vision behind it."
-    }
-    
-]
+const data = [
+  {
+    image: "/img16.jpg",
+    caption: "View photography",
+    description:
+      "Browse galleries organized by artists and themes. Each collection reveals something new about the craft and the vision behind it.",
+  },
+  {
+    image: "/img7.png",
+    caption: "Send images to your circle",
+    description:
+      "Browse galleries organized by artists and themes. Each collection reveals something new about the craft and the vision behind it.",
+  },
+  {
+    image: "/img6.png",
+    caption: "Send images to your circle",
+    description:
+      "Browse galleries organized by artists and themes. Each collection reveals something new about the craft and the vision behind it.",
+  },
+];
 
 export default async function Home() {
   await new Promise((resolve) => {
@@ -41,14 +43,15 @@ export default async function Home() {
       <HeaderSection />
       <HowitWork />
 
-{data.map((item, index)=>(
-  <FeaturesListSection
-    key={index}
-    count={index + 1}
-    caption={item.caption}
-    image={item.image}
-    description={item.description}/>
-))}
+      {data.map((item, index) => (
+        <FeaturesListSection
+          key={index}
+          count={index + 1}
+          caption={item.caption}
+          image={item.image}
+          description={item.description}
+        />
+      ))}
       {/* <FeaturesListSection
       image={"/img16.jpg"}
         caption="View photography"
@@ -69,8 +72,8 @@ export default async function Home() {
         collection reveals something new about the craft and the vision
         behind it."
       /> */}
-      <ReadyToBeginSection/>
-    <Footer/>
+      <ReadyToBeginSection />
+      <Footer />
     </div>
   );
 }

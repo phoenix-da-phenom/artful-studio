@@ -1,8 +1,11 @@
+"use client"
 import React, { Fragment } from "react";
 import TextHeader from "./TextHeader";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 function ReadyToBeginSection() {
+  const router = useRouter()
   return (
     <section className="min-h-screen">
       <div className="mt-10">
@@ -15,7 +18,7 @@ function ReadyToBeginSection() {
           </span>
         </TextHeader>
        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 w-90  mx-auto">
-          <button className="bg-secondary text-black px-8 py-3 font-semibold rounded-sm hover:bg-gray-200 transition">
+          <button onClick={()=>router.push("/explore")} className="bg-secondary text-black px-8 py-3 font-semibold rounded-sm hover:bg-gray-200 transition">
             Browse
           </button>
 

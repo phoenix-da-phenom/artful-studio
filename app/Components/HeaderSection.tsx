@@ -1,7 +1,10 @@
-import React from "react";
+"use client"
+
 import TextHeader from "./TextHeader";
+import { useRouter } from "next/navigation";
 
 export default function HeaderSection() {
+  const router = useRouter()
   return (
     <section
       className="
@@ -52,7 +55,7 @@ export default function HeaderSection() {
           </span>
          </TextHeader>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+        <div onClick={()=>router.push("/explore") } className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
           <button className="bg-secondary text-black px-8 py-3 font-semibold rounded-sm hover:bg-gray-200 transition">
             Browse
           </button>
