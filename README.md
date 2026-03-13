@@ -1,3 +1,36 @@
+🎨 Creators Hub
+
+Creators Hub is a modern web application built with Next.js that allows artists, photographers, and makeup artists to share their work, connect, and collaborate on creative projects. It provides a platform for inspiration, networking, and professional growth.
+
+🚀 Features
+
+User Profiles: Each artist can create a personal profile showcasing their portfolio and expertise.
+
+Gallery Sharing: Upload and display photos, makeup designs, and creative projects.
+
+Collaboration Tools: Connect with other creators, share ideas, and work on joint projects.
+
+Social Interaction: Like, comment, and follow other creators to stay updated on their work.
+
+Responsive Design: Fully optimized for both desktop and mobile devices.
+
+Real-Time Notifications: Get alerts when someone interacts with your content or invites you to collaborate.
+
+Search & Discovery: Find creators based on skills, location, or project type.
+
+🛠 Tech Stack
+
+Frontend: Next.js, React, Tailwind CSS (or your preferred styling framework)
+
+Backend: Next.js API routes (can be connected to Node.js/Express or a headless CMS)
+
+Database: MongoDB / PostgreSQL / Firebase (choose according to your preference)
+
+Authentication: NextAuth.js or JWT-based auth
+
+Cloud Storage: AWS S3 / Cloudinary (for image uploads)
+
+Notifications: Socket.io / Pusher (optional for real-time updates)
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
