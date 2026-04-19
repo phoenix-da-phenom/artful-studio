@@ -4,6 +4,7 @@ import { SlArrowDown } from "react-icons/sl";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
   const [showExpansion, setShowExpansion] = useState(false); // desktop "More"
@@ -34,7 +35,7 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <ul className="hidden lg:flex gap-4 items-center text-sm font-extralight cursor-pointer">
-          <li>Gallery</li>
+          <li><Link href="/gallery"> Gallery</Link></li>
           <li>Artist</li>
           <li>Community</li>
           <li

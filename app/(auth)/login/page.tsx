@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-export default async function ForgotPasswordPage() {
+export default async function Page() {
   
   const router = useRouter(); // ✅ hook at top level
   const [loading, setLoading] = useState(false);
