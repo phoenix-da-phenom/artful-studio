@@ -3,11 +3,11 @@ import React from 'react'
 
 export default function TextHeader({ style, className, children}:TextHeaderProps) {
   return (
-    <h1
+    <div
       style={style}
       className={`flex flex-col gap-3 ${className}`}
     >
       {children}
-    </h1>
+    </div>
   )
 }
