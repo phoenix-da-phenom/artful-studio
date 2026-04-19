@@ -17,13 +17,13 @@ const data = [
       "Browse galleries organized by artists and themes. Each collection reveals something new about the craft and the vision behind it.",
   },
   {
-    image: "/img7.png",
+    image: "/img7.PNG",
     caption: "Send images to your circle",
     description:
       "Browse galleries organized by artists and themes. Each collection reveals something new about the craft and the vision behind it.",
   },
   {
-    image: "/img6.png",
+    image: "/img6.PNG",
     caption: "Send images to your circle",
     description:
       "Browse galleries organized by artists and themes. Each collection reveals something new about the craft and the vision behind it.",
