@@ -103,7 +103,7 @@ export default function Navbar() {
   shadow-lg
 "
         >
-          <li onClick={closeMobileMenu}>Gallery</li>
+          <li> <Link href="/gallery">Gallery</Link></li>
           <li onClick={closeMobileMenu}>Images</li>
           <li onClick={closeMobileMenu}>Community</li>
 
